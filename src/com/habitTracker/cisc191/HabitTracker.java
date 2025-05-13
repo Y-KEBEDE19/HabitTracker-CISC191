@@ -18,14 +18,38 @@
 * Version: 2025-05-12
 */
 package com.habitTracker.cisc191;
+import java.util.ArrayList;
 
 /**
- * Purpose: The reponsibility of HabitTracker is ...
+ * Purpose: The responsibility of HabitTracker is to keep track of Habits
  *
- * HabitTracker is-a ...
- * HabitTracker is ...
+ * HabitTracker is-a class
+ * HabitTracker is 
  */
 public class HabitTracker
 {
-
+	ArrayList<Habit> habits = new ArrayList<>(); // HabitTracker Has-A array of Habits
+	
+	// Purpose: Add a Habit to the Habit Tracker 
+	
+	public void addHabit(Habit newHabit)
+	{
+		// Adding a habit
+		habits.add(newHabit);
+	}
+	
+	// Purpose: remove Habit from Habit Tracker
+	public void removeHabit(int index)
+	{
+		habits.remove(index);
+	}
+	
+	// Purpose: return the List from Habit Tracker for File Management 
+	
+	public ArrayList<Habit> getHabits()
+	{
+		return habits;
+	}
+	
+	
 }

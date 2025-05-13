@@ -19,13 +19,71 @@
 */
 package com.habitTracker.cisc191;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
 /**
- * Purpose: The reponsibility of FileManagment is ...
+ * Purpose: The responsibility of FileManagment is to Manage the Habits with a Efficient File System
  *
- * FileManagment is-a ...
+ * FileManagment is-a class
  * FileManagment is ...
  */
 public class FileManagment
 {
 
+	HabitTracker tracker = new HabitTracker(); // File Manager Has-A HabitTracker object
+	
+	String fileName; // File Manager Has-A File Name 
+	
+	File myFile; // File Manager Has-A File
+	
+	
+	public FileManagment(HabitTracker habitTracker, String fileName)
+	{
+		//Receiving the name of the File
+		this.fileName = fileName; 
+		
+		//Receiving Habit Tracker Object
+		tracker = habitTracker; 
+		
+		// Naming the File
+		myFile = new File(fileName);
+		
+	}
+	
+	// Store habits into File -> Each Individual Habit is in one line 
+	public void save() throws IOException
+	{
+		
+		try (PrintWriter out = new PrintWriter( new FileWriter(myFile)))
+		{
+			for(Habit h: tracker.getHabits())
+			{
+					out.println(h.toString());
+			}
+		}
+	}
+	
+	
+	// Purpose: Load Info from File back into Habits
+	
+	public void load() throws IOException
+	{
+		try(Scanner sc = new Scanner(myFile))
+		{
+			while(sc.hasNextLine())
+			{
+				String line = sc.nextLine().trim();
+				
+				if(line.isEmpty()) continue;
+				
+				Habit h = Habit.fromString(line);
+				tracker.addHabit(h);
+	
+			}
+		}
+	}
 }
