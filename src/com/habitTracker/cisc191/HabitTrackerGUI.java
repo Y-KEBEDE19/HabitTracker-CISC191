@@ -112,13 +112,13 @@ public class HabitTrackerGUI extends JFrame
 		
 		// Layout of AddHabits 
 				
-		addHabitPanel.setBorder(BorderFactory.createEmptyBorder(20,200,20,20)); // Specifying the position
+		addHabitPanel.setBorder(BorderFactory.createEmptyBorder(20,200,20,20)); // Specifying the Position
 		add(addHabitPanel, BorderLayout.WEST); // Adding addHabit Button to Position WEST
 		
 		
 		// Layout of Save & Load Buttons: 
 		
-		saveAndLoadPanel.setBorder(BorderFactory.createEmptyBorder(20,20,20,200));
+		saveAndLoadPanel.setBorder(BorderFactory.createEmptyBorder(20,20,20,200)); // Specifying the Position
 		add(saveAndLoadPanel, BorderLayout.EAST); // Adding Save & Load Habits to Position EAST
 
 		

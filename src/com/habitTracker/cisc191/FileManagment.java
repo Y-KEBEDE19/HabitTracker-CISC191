@@ -78,11 +78,11 @@ public class FileManagment
 			{
 				String line = sc.nextLine().trim();
 				
-				if(line.isEmpty()) continue;
-				
-				Habit h = Habit.fromString(line);
-				tracker.addHabit(h);
-	
+				if(! line.isEmpty())
+				{
+					Habit habit = Habit.fromString(line);
+					tracker.addHabit(habit);
+				}
 			}
 		}
 	}
