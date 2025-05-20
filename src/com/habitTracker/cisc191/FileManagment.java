@@ -34,11 +34,11 @@ import java.util.Scanner;
 public class FileManagment
 {
 
-	HabitTracker tracker = new HabitTracker(); // File Manager Has-A HabitTracker object
+	private HabitTracker tracker = new HabitTracker(); // File Manager Has-A HabitTracker object
 	
-	String fileName; // File Manager Has-A File Name 
+	private String fileName; // File Manager Has-A File Name 
 	
-	File myFile; // File Manager Has-A File
+	private File myFile; // File Manager Has-A File
 	
 	
 	public FileManagment(HabitTracker habitTracker, String fileName)

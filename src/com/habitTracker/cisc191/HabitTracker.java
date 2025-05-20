@@ -28,7 +28,7 @@ import java.util.ArrayList;
  */
 public class HabitTracker
 {
-	ArrayList<Habit> habits = new ArrayList<>(); // HabitTracker Has-A array of Habits
+	private ArrayList<Habit> habits = new ArrayList<>(); // HabitTracker Has-A array of Habits
 	
 	// Purpose: Add a Habit to the Habit Tracker 
 	
