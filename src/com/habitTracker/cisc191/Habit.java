@@ -1,8 +1,10 @@
 /**
 * Lead Author(s):
 * @author yididk; student ID
-* @author Full name; student ID
+* @author Yididya Kebede: 5550169151
 * <<Add additional lead authors here>>
+* 
+* Github Link: https://github.com/Y-KEBEDE19/HabitTracker-CISC191
 *
 * Other Contributors:
 * Full name; student ID or contact information if not in class
@@ -95,9 +97,9 @@ public class Habit
 	public static Habit fromString(String csv)
 	{
 		String [] parts = csv.split(",");
-		Habit h = new Habit( parts[0], Boolean.parseBoolean(parts[2]));
-		h.setStreakCount(Integer.parseInt(parts[1]));
-		return h;
+		Habit habit = new Habit( parts[0], Boolean.parseBoolean(parts[2]));
+		habit.setStreakCount(Integer.parseInt(parts[1]));
+		return habit;
 		
 	}
 	
