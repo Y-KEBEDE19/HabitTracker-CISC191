@@ -38,18 +38,37 @@ public class HabitTracker
 		habits.add(newHabit);
 	}
 	
-	// Purpose: remove Habit from Habit Tracker
-	public void removeHabit(int index)
+	// Purpose: get & remove Habit from Habit Tracker
+	public Habit getHabit()
 	{
-		habits.remove(index);
+		return habits.removeFirst();
+	}
+	
+	// Purpose: Notify 
+	public boolean isEmpty()
+	{
+		return habits.size() > 0;
+	}
+	
+	// Purpose: removes all habits
+	public void clearAllHabits()
+	{
+		habits.clear();
 	}
 	
 	// Purpose: return the List from Habit Tracker for File Management 
-	
-	public ArrayList<Habit> getHabits()
+	public ArrayList<Habit> getAllHabits()
 	{
-		return habits;
+		return new ArrayList<>(habits);
 	}
-	
+	/**
+	 * Purpose: remove specific habit
+	 * @param habit
+	 */
+	public void removeHabit(Habit habit)
+	{
+		// TODO Auto-generated method stub
+		habits.remove(habit);
+	}
 	
 }

@@ -20,6 +20,7 @@
 package com.habitTracker.cisc191;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -31,7 +32,7 @@ import java.util.Scanner;
  * FileManagment is-a class
  * FileManagment is ...
  */
-public class FileManagment
+public class FileManager
 {
 
 	private HabitTracker tracker = new HabitTracker(); // File Manager Has-A HabitTracker object
@@ -41,7 +42,7 @@ public class FileManagment
 	private File myFile; // File Manager Has-A File
 	
 	
-	public FileManagment(HabitTracker habitTracker, String fileName)
+	public FileManager(HabitTracker habitTracker, String fileName)
 	{
 		//Receiving the name of the File
 		this.fileName = fileName; 
@@ -55,35 +56,36 @@ public class FileManagment
 	}
 	
 	// Store habits into File -> Each Individual Habit is in one line 
-	public void save() throws IOException
-	{
-		
-		try (PrintWriter out = new PrintWriter( new FileWriter(myFile)))
-		{
-			for(Habit h: tracker.getHabits())
-			{
-					out.println(h.toString());
-			}
-		}
-	}
-	
+	 public void save() throws IOException 
+	 {
+        try (PrintWriter out = new PrintWriter(new FileWriter(myFile))) 
+        {
+            for (Habit habit : tracker.getAllHabits()) 
+            {
+                out.println(habit.toString());
+            }
+        }
+	 }
 	
 	// Purpose: Load Info from File back into Habits
-	
-	public void load() throws IOException
-	{
-		try(Scanner sc = new Scanner(myFile))
-		{
-			while(sc.hasNextLine())
-			{
-				String line = sc.nextLine().trim();
-				
-				if(! line.isEmpty())
-				{
-					Habit habit = Habit.fromString(line);
-					tracker.addHabit(habit);
-				}
-			}
-		}
-	}
+	 public void load() throws IOException, FileNotFoundException {
+	        tracker.clearAllHabits();   // resetting the model 
+
+	        if (!myFile.exists())
+	        {
+	        	throw new FileNotFoundException(myFile.getName());
+	        }
+	        try (Scanner sc = new Scanner(myFile))
+	        {
+	            while (sc.hasNextLine()) 
+	        {
+	                String line = sc.nextLine().trim();
+	                if (!line.isEmpty())
+	                {
+		                Habit h = Habit.fromString(line);
+		                tracker.addHabit(h);
+	                }
+	        }
+	        }
+}
 }
