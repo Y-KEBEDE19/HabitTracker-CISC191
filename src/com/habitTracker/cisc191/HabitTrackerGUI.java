@@ -100,7 +100,7 @@ public class HabitTrackerGUI extends JFrame
 	private HabitTracker trackerModel = new HabitTracker(); // HabitTrackerGUI
 															// Has-A model ->
 															// trackerModel
-	private FileManager fileManager; // GUI Has-A fileManager
+	private FileManager fileManager; // HabitTrackerGUI Has-A fileManager
 	private String lastFileName = null; // Name of Last File Saved
 
 	// Title & Instructions
@@ -115,10 +115,9 @@ public class HabitTrackerGUI extends JFrame
 	private ImageIcon addHabitImg = new ImageIcon(
 			getClass().getResource("/Images/addButton2.png")); // habitButton
 																// Image
-	private JPanel detailPanel = new JPanel(); // When clicking on a habit it
-												// brings up a detail panel
-	private Habit currentlyShowingHabit; // Current Habit whose details are
-											// being shown
+	private JPanel detailPanel = new JPanel(); // HabitTrackerGUI Has-A detail Panel
+	private Habit currentlyShowingHabit; // Current Habit details
+										
 
 	// Save & Load From FileManager Button:
 	private JPanel saveAndLoadPanel; // GUI Has-A save&LoadPanel

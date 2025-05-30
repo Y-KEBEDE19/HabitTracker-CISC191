@@ -33,12 +33,18 @@
  *         Stream:
  *         Oracle. (2025, April 5). Stream (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html
+ *         
+ *         KeepOnCoding. (n.d.). YouTube. https://www.youtube.com/watch?v=FWoYpM-E3EQ
  * 
  *         Oracle. (2025, April 5). Collectors (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html
  * 
  *         Oracle. (2025, April 5). Function (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html
+ * 
+ * 
+ *         Oracle. (2025, April 5). Collection (Java platform SE 8 ).
+ *         https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html
  * 
  *         Set:
  *         Oracle. (2025, April 5). Set (Java platform SE 8 ).
@@ -49,7 +55,11 @@
  *         Oracle. (2024, January 8). String (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
  * 
- *         <<Add more references here>>
+ *         Math Functions:
+ *         Oracle. (2023, June 14). Math (Java platform SE 8 ).
+ *         https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
+ * 
+ *         
  *
  *         Version: 2025-05-12
  */
@@ -69,16 +79,8 @@ import java.util.stream.Collectors;
  */
 public class Habit
 {
-	private String name; // Habit Has-A name
-	private final NavigableSet<LocalDate> completedDates = new TreeSet<>(); // Keep
-																			// Track
-																			// of
-																			// Time
-																			// ->
-																			// Helps
-																			// with
-																			// Maintaining
-																			// streak
+	private String name; // Habit Has-A Name
+	private final NavigableSet<LocalDate> completedDates = new TreeSet<>(); // Habit HAS-A TreeSet of Completed Dates
 
 	public Habit(String name)
 	{
