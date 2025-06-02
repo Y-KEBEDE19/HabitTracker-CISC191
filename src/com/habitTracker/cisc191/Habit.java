@@ -59,8 +59,9 @@
  *         Math Functions:
  *         Oracle. (2023, June 14). Math (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html
- * 
  *         
+ *         Abel Desta, (2025, May 23). Streams & TreeSet & NavigableSet
+ *         ** Relative , explain Streams & TreeSet & NavigableSet & Inspired Idea to Track CompletedDates with Streams **
  *
  *         Version: 2025-05-12
  */
@@ -82,6 +83,13 @@ public class Habit
 {
 	private String name; // Habit Has-A Name
 	private final NavigableSet<LocalDate> completedDates = new TreeSet<>(); // Habit HAS-A TreeSet of Completed Dates
+	
+	// Explanation: 
+	// Set is a collection that cannot contain multiple elements 
+	// NavigableSet is a type of Set 
+	// TreeSet keeps it in ascending order -> here dates are ordered chronologically 
+	
+	
 
 	public Habit(String name)
 	{
@@ -119,11 +127,19 @@ public class Habit
 	public String toString()
 	{
 		String joinedDates = completedDates.stream() // all dates
+		// Takes the collection because a Set IS-A Collection and returns a stream
+				// A Stream is not a Data-Structure 
+		// once it is a stream these functions can be called. 
+				
 				.map(LocalDate::toString) // change format of each date to
 											// something readable
+		// for each localDate in the stream it calls the toString method of the localDate
+				
 				.collect(Collectors.joining(";")); // join string with
 													// semi-colons
+		// takes all the date-strings and puts them together while separating them with a ;
 		return name + "|" + joinedDates;
+		// Now to store the habit into the File -> takes the name of the File and joins it with the Date 
 	}
 
 	/**
