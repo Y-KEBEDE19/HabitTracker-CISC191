@@ -15,7 +15,6 @@
  * 
  *         Learning How to Track Date-Time:
  * 
- * 
  *         References:
  * 
  *         LocalDate:
@@ -33,6 +32,8 @@
  *         Stream:
  *         Oracle. (2025, April 5). Stream (Java platform SE 8 ).
  *         https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html
+ *         
+ *         Baeldung. (n.d.). The Java Stream API. https://www.baeldung.com/java-8-streams
  *         
  *         KeepOnCoding. (n.d.). YouTube. https://www.youtube.com/watch?v=FWoYpM-E3EQ
  * 
